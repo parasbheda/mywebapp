@@ -1,0 +1,19 @@
+﻿<div class="wrapper" ng-controller="HomeController">
+    <div class="body container">
+        <form class="user-input">
+            <ul class="input-list">
+                <li class="food"><input ng-model="food" type="text" class="form-control" placeholder="Food" autofocus="" /></li>
+                <li><input ng-model="place" type="text" class="form-control place" placeholder="Place" /></li>
+            </ul>
+            <button ng-click="search()" class="btn btn-lg btn-block search">Search</button>
+            <ul class="checkbox custom-checkbox">
+                <li class="review-box"><input ng-model="review" ng-change="changeReview(review,distance)" type="checkbox" /><label>sort by review</label></li>
+                <li><input ng-model="distance" ng-change="changeDistance(review, distance)" type="checkbox" /><label>sort by distance</label></li>
+            </ul>
+            <div id="error" class="displaynone">
+                Sorry, the search for this place is not available
+            </div>
+        </form>
+    </div>
+    <div class="dynamic" data-autoscroll="false" data-ui-view></div>
+</div>

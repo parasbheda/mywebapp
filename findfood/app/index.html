@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <title>Home</title>
+    <link href="imports/bootstrap.css" rel="stylesheet" />
+    <link href="main.css" rel="stylesheet" />
+    <script src="imports/angular.min.js"></script>
+    <!-- <script src="imports/ui-router.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.js"></script>
+    <script src="main.js"></script>
+    <script src="imports/oauth-signature.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false&language=en"></script>
+</head>
+<body ng-controller="MainController">
+    <div class="header container">
+        <ul class="header-list">
+            <li class="logo">
+                <p>findfood</p>
+            </li>
+            <li class="navigation">
+                <div class="home"><button class="btn" ng-click="home()">Home</button></div>
+                <div class="aboutme"><button data-ui-sref="aboutme" class="btn">AboutMe</button></div>
+                <div id="login" class="login"><button class="btn" ng-click="login()">Login</button></div>
+                <div id="logout" class="logout"><button class="btn" ng-click="logout()">Logout</button></div>
+                <div id="favourites" class="favourites-button"><button class="btn" ng-click="favourites()">Favourites</button></div>
+                <div id="reviews" class="favourites-button"><button class="btn" ng-click="reviews()">Your Reviews</button></div>
+            </li>
+
+        </ul>
+    </div>
+    <div class="dynamic" data-autoscroll="false" data-ui-view></div>
+    <!--<div class="footer">Created by Paras Bheda at <a href="www.neu.edu" target="_blank">Northeastern University</a></div>-->
+</body>
+</html>
+ 

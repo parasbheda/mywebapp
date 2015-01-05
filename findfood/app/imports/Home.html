@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://localhost:8080/#/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <title>Home</title>
+    <link href="http://localhost:8080/imports/bootstrap.css" rel="stylesheet">
+    <link href="http://localhost:8080/main.css" rel="stylesheet">
+    <script src="./Home_files/angular.min.js"></script>
+    <!-- <script src="imports/ui-router.js"></script>-->
+    <script src="./Home_files/angular-ui-router.js"></script>
+    <script src="./Home_files/main.js"></script>
+    <script src="./Home_files/oauth-signature.min.js"></script>
+    <script src="./Home_files/js"></script><script src="./Home_files/main(1).js"></script>
+<script type="text/javascript" charset="UTF-8" src="./Home_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./Home_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./Home_files/stats.js"></script></head>
+<body ng-controller="MainController" class="ng-scope">
+    <div class="header container">
+        <ul class="header-list">
+            <li class="logo">
+                <p>findfood</p>
+            </li>
+            <li class="navigation">
+                <div class="home"><button class="btn" ng-click="home()">Home</button></div>
+                <div id="login" class="login displaynone"><button class="btn" ng-click="login()">Login</button></div>
+                <div id="logout" class="logout displayblock"><button class="btn" ng-click="logout()">Logout</button></div>
+                <div id="favourites" class="favourites-button displayblock"><button class="btn" ng-click="favourites()">Favourites</button></div>
+                <div id="reviews" class="favourites-button displayblock"><button class="btn" ng-click="reviews()">Your Reviews</button></div>
+            </li>
+
+        </ul>
+    </div>
+    <!-- ui-view-anchor --><div class="dynamic" data-autoscroll="false" data-ui-view=""><div class="container ng-scope" ng-controller="ViewReviewController">
+    <div class="profile-review">
+        <h3>Your Profile</h3>
+        <p class="ng-binding">parasbheda</p>
+        <ul>
+            <li><img src="./Home_files/user-icon.png"></li>
+            <li class="fav-img">
+                <img src="./Home_files/favourites.png">
+                <p class="ng-binding">13 Favourites</p>
+            </li>
+        </ul>
+    </div>
+
+</div></div>
+
+
+</body></html>

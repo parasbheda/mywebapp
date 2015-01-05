@@ -1,0 +1,45 @@
+﻿<div class="container" ng-controller="ReviewController">
+    <div class="profile-review">
+        <h3>Your Profile</h3>
+        <p>{{username}}</p>
+        <ul>
+            <li><img src="imports/user-icon.png" /></li>
+            <li class="fav-img">
+                <img src="imports/favourites.png" />
+                <p>{{favouritesCount}} Favourites</p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <table class="place-review table">
+            <tr>
+                <td>
+                    <img ng-src={{business.image_url}} />
+                </td>
+                <td>
+                    <p><a ng-href="{{business.url}}">{{business.name}}</a><p>
+                        <img ng-src={{business.rating_img_url}} />
+                    <p class="reviews">{{business.review_count}} reviews</p>
+                    <ul>
+                        <li ng-repeat="category in business.categories">{{category[0]}}</li>
+                    </ul>
+                </td>
+                <td>
+                    <img src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/0288f46ccbae/default_avatars/user_30_square.png" />
+                    <p>{{business.snippet_text}}</p>
+                </td>
+            </tr>
+        </table>
+
+        <div id="write-review">
+            <textarea class="textarea" rows="10" cols="100" maxlength="250" ng-model="review">Review:</textarea>
+            <br />
+            <button class="submit-review" ng-click="submit(review)">Submit Review</button>
+            <button class="submit-review" ng-click="cancel(review)">Cancel</button>
+        </div>
+        <div id="displayreview">
+            <p>{{userreview}}</p>
+            <p class="thanks">Thank you for your review!</p>
+        </div>
+    </div>
+</div>

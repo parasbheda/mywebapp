@@ -1,0 +1,45 @@
+﻿<div class="container" ng-controller="ViewReviewController">
+    <div class="profile-review">
+        <h3>Your Profile</h3>
+        <p>{{username}}</p>
+        <ul>
+            <li><img src="imports/user-icon.png" /></li>
+            <li class="fav-img">
+                <img src="imports/favourites.png" />
+                <p>{{favouritesCount}} Favourites</p>
+            </li>
+            <li class="rev-img">
+                <img src="imports/reviewed.png" />
+                <p>{{reviewCount}} reviewed</p>
+            </li>
+        </ul>
+    </div>
+    <table class="view-review table" ng-if="reviewed()" >
+        <tr ng-repeat="obj in objects">
+            <td class="first">
+                <img ng-src={{obj.business.image_url}} />
+            </td>
+            <td class="middle">
+                <p><a ng-href="{{obj.business.url}}">{{obj.business.name}}</a><p>
+                    <img ng-src={{obj.business.rating_img_url}} />
+                <p class="reviews">{{obj.business.review_count}} reviews</p>
+                <ul>
+                    <li ng-repeat="category in obj.business.categories">{{category[0]}}</li>
+                </ul>
+            </td>
+            <td>
+                <p class="your-review">Your Review:</p>
+                <p class="review">{{obj.review}}</p>
+            </td>
+        </tr>   
+        <!--<tr class="other-row">
+            <td>
+                <button class="other-reviews">Get reviews of other users</button>
+            </td>
+        </tr> --> 
+    </table>
+    <div ng-if="noReviews()" id="nofavourites">
+        You have not reviewed any place.
+    </div>
+
+</div>

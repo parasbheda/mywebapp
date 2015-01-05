@@ -1,0 +1,53 @@
+﻿<div class="container yelp" ng-controller="FavouritesController">
+    <div class="profile">
+        <h3>Your Profile</h3>
+        <p>{{username}}</p>
+        <ul>
+            <li><img src="imports/user-icon.png" /></li>
+            <li class="fav-img">
+                <img src="imports/favourites.png" /> 
+                <p>{{numFavourites}} favourites</p>
+            </li>
+            <li class="rev-img">
+                <img src="imports/reviewed.png" />
+                <p>{{numReviewed}} reviewed</p>
+            </li>
+        </ul>
+    </div>
+    <div id="listoffavourites" ng-if="isFavouritesNotEmpty()">
+        <div class="table-head">
+            <h3>List of your Favourites</h3>
+        </div>
+        <table class="table favourites-table">
+            <tr ng-repeat="favourite in userFavourites">
+                <td>
+                    <img ng-src={{favourite.image_url}} />
+                </td>
+                <td>
+                    <p><a ng-href="{{favourite.url}}">{{favourite.name}}</a><p>
+                        <img ng-src={{favourite.rating_img_url}} />
+                    <p class="reviews">{{favourite.review_count}} reviews</p>
+                    <ul>
+                        <li ng-repeat="category in favourite.categories">{{category[0]}}</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul ng-repeat="address in favourite.location.display_address">
+                        <p>{{address}}</p>
+                    </ul>
+                </td>
+                <td>
+                    <img src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/0288f46ccbae/default_avatars/user_30_square.png" />
+                    <p>{{favourite.snippet_text}}</p>
+                    <div class="favourites">
+                        <img src="imports/favourites.png" />
+                        <button ng-if=ifExists(favourite.id) ng-click="writeReview(favourite)">Write review</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div ng-if="isFavouritesEmpty()" id="nofavourites">
+        You have No Favourites.
+    </div>
+</div>

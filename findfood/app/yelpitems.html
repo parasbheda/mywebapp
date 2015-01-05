@@ -1,0 +1,59 @@
+﻿<div class="container yelp" ng-controller="YelpController">
+   <table class="table custom-table">
+       <tr ng-repeat="favourite in favourites">
+           <td>
+               <img ng-src={{favourite.image_url}} />
+           </td>
+           <td>
+               <p><a ng-href="{{favourite.url}}">{{favourite.name}}</a><p>
+               <img ng-src={{favourite.rating_img_url}} />
+               <p class="reviews">{{favourite.review_count}} reviews</p>
+               <ul>
+                   <li ng-repeat="category in favourite.categories">{{category[0]}}</li>
+               </ul>
+           </td>
+           <td>
+               <ul ng-repeat="address in favourite.location.display_address">
+                   <p>{{address}}</p>
+               </ul>
+           </td>
+           <td>
+               <img src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/0288f46ccbae/default_avatars/user_30_square.png" />
+               <p>{{favourite.snippet_text}}</p>
+               <div class="favourites">
+                   <img src="imports/favourites.png" />
+                   <button ng-if="ifExists(favourite.id)" ng-click="writeReview(favourite)">Write review</button>
+               </div>
+           </td>
+       </tr>
+        <tr ng-repeat="business in businesses">
+            <td>
+                <img ng-src={{business.image_url}} />
+            </td>
+            <td>
+                <p><a ng-href="{{business.url}}">{{business.name}}</a><p>
+                <img ng-src={{business.rating_img_url}} />
+                <p class="reviews">{{business.review_count}} reviews</p>
+                <ul>
+                    <li ng-repeat="category in business.categories">{{category[0]}}</li>
+                </ul>
+            </td>
+            <td>
+                <ul ng-repeat="address in business.location.display_address">
+                    <p>{{address}}</p>
+                </ul>
+            </td>
+            <td>
+                <img src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/0288f46ccbae/default_avatars/user_30_square.png" />
+                <p>{{business.snippet_text}}</p>
+                <div class="favourites">
+                    <button ng-click="addToFavourites(business)">+Favourites</button><!--business.id,business.image_url,business.url,business.name,business.rating_img_url,business.categories,business.location.display_address,business.snippet_text-->
+                    <button ng-if="ifExists(business.id)" ng-click="writeReview(business)">Write review</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div id="map" class="nav"></div>
+</div>
+ 

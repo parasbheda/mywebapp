@@ -1,0 +1,9 @@
+﻿<div ng-controller="LoginController" class="loginwrapper">
+    <form class="form-signin loginform" id="form-signin">
+        <h2 class="form-signin-heading">Please login</h2>
+        <p class="displaynone" id="invalid-user">* invalid username or password</p>
+        <input ng-model="username" type="text" class="form-control" placeholder="User Name" required="" autofocus="" />
+        <input ng-model="password" type="password" class="form-control" placeholder="Password" required="" />
+        <button ng-click="authenticate()" class="btn btn-lg btn-block">Login</button>
+    </form>
+</div>
